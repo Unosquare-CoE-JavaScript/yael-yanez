@@ -1,5 +1,8 @@
 /*
-  Avoid redudancy when storing data
+  * Avoid redudancy when storing data
+  * Store common data externally
+  * Specify and index or a reference into the external data store
+  * Define the idea of 'ranges' on homogeneous collections and stores data related to those ranges
 
   A space optimization technique that let us use 
   less memory by storing externally the data associeted with similar objects
