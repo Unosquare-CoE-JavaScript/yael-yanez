@@ -1,3 +1,14 @@
+/*
+
+  * Given sufficient complexity, it pays to formally define possible states and events/triggers
+  * Can define 
+    * State entry/exit behaviours
+    * Action when a particular event causes a transition
+    * Guard coditions enabling/disabling a transition
+    * Default action when no transitions are found for an event
+
+*/
+
 class Switch {
   constructor() {
     this.state = new OffState();
