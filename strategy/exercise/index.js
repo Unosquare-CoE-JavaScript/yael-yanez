@@ -9,6 +9,7 @@ class DamageStrategy {
 
 class ConstantDamageStategy extends DamageStrategy {
   damage(creature) {
+    creature.impacts += 1;
     creature.health -= 1;
     creature.alive = creature.health > 0;
   }
@@ -42,32 +43,26 @@ class Creature {
     if (this.alive) this.damageStrategy.damage(this);
   }
 
-  restoreHealth(newHealth) {
-    this.health = newHealth;
-    return `\n${this.name}'s health has recieve ${newHealth} points of health.\n`;
-  }
-
   toString() {
     return this.alive
-      ? `[${this.name} Status]:\n  Attack: ${this.attack}\n  Health: ${this.health}.`
-      : `[${this.name} Status]: Dead.`;
+      ? `[${this.name} Status]:\n  Attack: ${this.attack}\n  Health: ${this.health}`
+      : `[${this.name} Status]: Dead due ${this.impacts} impacts with traps.`;
   }
 }
 
-const goblin = new Creature("Goblin", 10, 20);
+const goblin = new Creature("Goblin", 10, 3);
+const skeleton = new Creature("Skeleton", 10, 20);
 
 goblin.setTypeOfDamage(TypeOfDamage.constantDamage);
 goblin.impactWithTrap();
 goblin.impactWithTrap();
-
-console.log(goblin.toString());
-console.log(goblin.restoreHealth(20));
-
-goblin.setTypeOfDamage(TypeOfDamage.growingDamage);
-goblin.impactWithTrap();
-goblin.impactWithTrap();
-goblin.impactWithTrap();
-goblin.impactWithTrap();
 goblin.impactWithTrap();
 
 console.log(goblin.toString());
+
+skeleton.setTypeOfDamage(TypeOfDamage.growingDamage);
+skeleton.impactWithTrap();
+skeleton.impactWithTrap();
+skeleton.impactWithTrap();
+
+console.log(skeleton.toString());
