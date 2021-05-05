@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   display: inline-block;
 `;
 
-export const Title = styled.p`
+export const Title = styled.h3`
   font-weight: bold;
 `;
 

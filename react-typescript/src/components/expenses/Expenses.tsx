@@ -1,9 +1,9 @@
-import { FC, useContext } from "react";
+import { FC } from "react";
 import ExpensesList from "./ExpensesList";
 import Modal from "../common/Modal";
 import AddExpenseForm from "./AddExpenseForm";
 import useModal from "../../hooks/useModal";
-import { ExpensesContext } from "../../contexts/ExpensesContext";
+import { useExpenseContext } from "../../contexts/ExpensesContext";
 import {
   Wrapper,
   TitleContainer,
@@ -12,7 +12,7 @@ import {
 import { PrimaryButton } from "../common/Buttons";
 
 const Expenses: FC = (): JSX.Element => {
-  const { expenses } = useContext(ExpensesContext);
+  const { expenses } = useExpenseContext();
   const { renderModal } = useModal();
 
   return (

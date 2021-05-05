@@ -1,8 +1,7 @@
-import { useState, useCallback, useContext } from "react";
-import { ModalContext } from "../contexts/ModalContext";
+import { useModalContext } from "../contexts/ModalContext";
 
 const useModal = () => {
-  const { isOpen, closeModal, renderModal } = useContext(ModalContext);
+  const { isOpen, closeModal, renderModal } = useModalContext();
   return { isOpen, closeModal, renderModal };
 };
 

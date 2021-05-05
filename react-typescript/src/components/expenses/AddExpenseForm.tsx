@@ -1,4 +1,4 @@
-import { FC, SyntheticEvent, useContext, useState } from "react";
+import { FC, SyntheticEvent, useState } from "react";
 import TextInput from "../common/TextInput";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -7,13 +7,13 @@ import {
   Form,
 } from "../../styled-components/expenses/addExpenseForm.styles";
 import { PrimaryButton } from "../common/Buttons";
-import { ExpensesContext } from "../../contexts/ExpensesContext";
+import { useExpenseContext } from "../../contexts/ExpensesContext";
 import { Expense } from "../../data/expenses";
 import useModal from "../../hooks/useModal";
 
 const AddExpenseForm: FC = (): JSX.Element => {
   const { closeModal } = useModal();
-  const { addExpense } = useContext(ExpensesContext);
+  const { addExpense } = useExpenseContext();
   const [expense, setExpense] = useState<Expense>({
     id: uuidv4(),
     title: "",

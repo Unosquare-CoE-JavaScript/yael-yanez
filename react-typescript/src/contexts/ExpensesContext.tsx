@@ -1,4 +1,4 @@
-import { createContext, useState, FC } from "react";
+import { createContext, useState, FC, useContext } from "react";
 import { expenses } from "../data/expenses";
 import type { Expense } from "../data/expenses";
 import type { ExpensesContextState } from "../types/types";
@@ -24,5 +24,7 @@ const ExpensesContextProvider: FC = ({ children }) => {
     </ExpensesContext.Provider>
   );
 };
+
+export const useExpenseContext = () => useContext(ExpensesContext);
 
 export default ExpensesContextProvider;

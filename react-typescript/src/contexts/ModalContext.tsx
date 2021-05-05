@@ -1,4 +1,4 @@
-import { createContext, FC, useState } from "react";
+import { createContext, FC, useContext, useState } from "react";
 import type { ModalContextState } from "../types/types";
 
 const contextDefaultValues: ModalContextState = {
@@ -23,5 +23,7 @@ const ModalContextProvider: FC = ({ children }) => {
     </ModalContext.Provider>
   );
 };
+
+export const useModalContext = () => useContext(ModalContext);
 
 export default ModalContextProvider;
