@@ -20,9 +20,8 @@ export const ModalContainer = styled.div<WrapperProps>`
   transform: translate(-50%, -50%);
   width: ${({ width }) => width || "60%"};
   height: ${({ height }) => height || "60%"};
-  background-color: #25262c;
-  box-shadow: 0px 0px 20px rgba(37, 38, 44, 1);
-  border-radius: 20px;
+  background-color: ${({ theme }) => theme.primary.dark};
+  border-radius: 10px;
   padding: 30px;
 `;
 
@@ -44,6 +43,6 @@ export const CloseIcon = styled.button`
   cursor: pointer;
   font-size: 25px;
   background-color: transparent;
-  color: white;
+  color: ${({ theme }) => theme.primary.textColor};
   border: none;
 `;

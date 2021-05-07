@@ -9,14 +9,15 @@ export const Label = styled.label`
   display: block;
   font-size: 12px;
   font-weight: bold;
+  color: ${({ theme }) => theme.textColor};
 `;
 
 export const Input = styled.input`
   width: 100%;
   background-color: transparent;
-  border: 1px solid #363943;
+  border: 1px solid ${({ theme }) => theme.primary.light};
   padding: 10px;
-  color: white;
+  color: ${({ theme }) => theme.textColor};
   border-radius: 5px;
   outline: none;
   transition: 0.2s all ease-in-out;
@@ -29,17 +30,17 @@ export const Input = styled.input`
   }
 
   ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+    filter: invert(0);
   }
 
   ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
   ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
   ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
-    color: transparent;
+    color: red;
   }
 
   :focus {
-    background-color: #363943;
-    border: 1px solid #0a84ff;
+    background-color: ${({ theme }) => theme.primary.light};
+    border: 1px solid ${({ theme }) => theme.primaryContrast.dark};
   }
 `;

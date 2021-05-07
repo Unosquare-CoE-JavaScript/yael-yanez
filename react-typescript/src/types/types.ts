@@ -10,3 +10,8 @@ export type ModalContextState = {
   renderModal: () => void;
   closeModal: () => void;
 };
+
+export type ThemeContextState = {
+  theme: boolean;
+  changeCurrentTheme: () => void;
+};

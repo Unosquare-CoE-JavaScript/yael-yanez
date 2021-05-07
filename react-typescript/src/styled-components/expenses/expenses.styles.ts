@@ -8,4 +8,6 @@ export const TitleContainer = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  color: ${({ theme }) => theme.textColor};
+`;
