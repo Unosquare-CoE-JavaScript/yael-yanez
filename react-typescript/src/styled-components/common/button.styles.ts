@@ -61,6 +61,9 @@ export const ThemeButton = styled.button`
   width: 50px;
   height: 50px;
   border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #6a5ff2;
   fill: white;
   box-shadow: 0px 0px 20px

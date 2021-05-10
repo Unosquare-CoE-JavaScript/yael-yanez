@@ -1,6 +1,6 @@
 export default {
   dark: {
-    background: "#1c1c20",
+    background: "#1c1c1e",
     primary: {
       light: "#363943",
       dark: "#25262c",
@@ -11,28 +11,28 @@ export default {
       textColor: "#ffffff",
     },
     secondaryContrast: {
-      dark: "#6a5ff2",
+      dark: "#5e5ce6",
       textColor: "#ffffff",
     },
     textColor: "#ffffff",
     redColor: "#ff443a",
   },
   light: {
-    background: "#F7F8FA",
+    background: "#f2f2f7",
     primary: {
       light: "#ffffff",
       dark: "#F6F7FB",
       textColor: "#000000",
     },
     primaryContrast: {
-      dark: "#0a84ff",
+      dark: "#007bff",
       textColor: "#ffffff",
     },
     secondaryContrast: {
-      dark: "#6a5ff2",
+      dark: "#5856d6",
       textColor: "#ffffff",
     },
     textColor: "#000000",
-    redColor: "#ff443a",
+    redColor: "#ff3b30",
   },
 };

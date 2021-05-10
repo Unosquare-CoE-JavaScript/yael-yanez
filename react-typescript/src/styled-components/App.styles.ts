@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyle`
+interface ThemeType {
+  background: string;
+}
+
+const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   * {
     margin: 0;
     padding: 0;
