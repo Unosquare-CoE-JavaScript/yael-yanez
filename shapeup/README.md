@@ -69,3 +69,9 @@ Ok, we got 6 weeks to build the solutions described in this pitch. Let's do this
 
   ![Screen_Shot_2021-10-06_at_13 52 25](https://user-images.githubusercontent.com/82840886/136266867-e67179f3-5eab-4238-9675-fbe2dfe04c89.png)
   ![Screen_Shot_2021-10-06_at_13 53 43](https://user-images.githubusercontent.com/82840886/136266888-160b9452-2a6b-4ac8-b408-a593d1863d6b.png)
+
+
+### _Good refences_
+[Primeros pasos con Shape Up](https://www.youtube.com/watch?v=ns_i03epYD8https://www.youtube.com/watch?v=GdncRC1HkK0)
+
+[Kiley Dorton: Ditch the Backlog – Stop Sprinting and Start Shaping (⚡️) / React Boston 2019](https://www.youtube.com/watch?v=ns_i03epYD8)
