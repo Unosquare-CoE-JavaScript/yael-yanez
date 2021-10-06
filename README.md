@@ -1,1 +1,1 @@
-Javascript CoE
+Javascript Patterns | Javascript CoE
