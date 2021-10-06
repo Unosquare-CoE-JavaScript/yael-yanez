@@ -1,12 +1,13 @@
 # Shape Up
 
 No backlog.
-
 No tickets.
-
 No story points.
-
 No daily stand-ups.
+
+![image](https://user-images.githubusercontent.com/82840886/136267138-89a5f692-2f5d-488c-819d-f504ceaa7232.png)
+
+
 
 # Shapping
 
@@ -18,13 +19,19 @@ What current business / product priorities should we address?
 - Rough out the elements
   - Design at the right level of abstraction
   - **Breadboarding**: connecting all the component with all its actions and solutions (arrows) before building (drawing the solution). Makes easier to the designer cause you give him the freedom to build something that works on its own way.
-    ![Screen Shot 2021-10-06 at 13.15.17.png](Shape%20Up%20f2beaa838fa14609b85821b8464f381f/Screen_Shot_2021-10-06_at_13.15.17.png)
+
+    ![Screen_Shot_2021-10-06_at_13 15 17](https://user-images.githubusercontent.com/82840886/136266524-195848ba-56fe-4f72-a9d4-397daa06405f.png)
+
   - **Fat marker sketches (visually solution)**: sketch out just enough of the visual design of the solution to be able to explain it to the designer. Doesn't has to contain all the wireframes, just has to contains the enough to explain the solution.
-    ![Screen Shot 2021-10-06 at 13.22.12.png](Shape%20Up%20f2beaa838fa14609b85821b8464f381f/Screen_Shot_2021-10-06_at_13.22.12.png)
+ 
+    ![Screen_Shot_2021-10-06_at_13 22 12](https://user-images.githubusercontent.com/82840886/136266559-6b13fa0c-476f-4dba-a1a2-a7a3fb443b73.png)
+
 - Address risks
   - Once having the breadboard or the fat marker sketches and you know how the solution works, you get more people involve such as a senior programmer, a designer and a customer services representative and explain the idea and discuss all the risks in order to figurate out how to avoid as much risks as possible.
-- Write the pitch
-  ![Screen Shot 2021-10-06 at 13.32.03.png](Shape%20Up%20f2beaa838fa14609b85821b8464f381f/Screen_Shot_2021-10-06_at_13.32.03.png)
+- Write the pitch (doesn't really go into a lot of details. It describes how it works, how to address the rabbit holes, etc..)
+
+  ![Screen_Shot_2021-10-06_at_13 32 03](https://user-images.githubusercontent.com/82840886/136266752-f7cf1f5a-bd3f-42b2-847e-439f04cb2992.png)
+  
   - Problem
     - Write down the problem
   - Appetite (in weeks)
@@ -54,10 +61,11 @@ Which of these pitches do we want to bet on for the next build cycle?
 Ok, we got 6 weeks to build the solutions described in this pitch. Let's do this.
 
 - Get one piece done: build the frontend and the backend at the same time.
-  ![Screen Shot 2021-10-06 at 13.47.22.png](Shape%20Up%20f2beaa838fa14609b85821b8464f381f/Screen_Shot_2021-10-06_at_13.47.22.png)
+
+  ![Screen_Shot_2021-10-06_at_13 47 22](https://user-images.githubusercontent.com/82840886/136266852-f3e15508-dd36-41bd-a8fb-deea6d26e3a9.png)
+
 - Mapping the scopes (bucket of work): you build your own scopes by listing all the tasks as you go.
 - The hill chart: once you how to solve a problem, you go to the execution
-  ![Screen Shot 2021-10-06 at 13.52.25.png](Shape%20Up%20f2beaa838fa14609b85821b8464f381f/Screen_Shot_2021-10-06_at_13.52.25.png)
-  ![Screen Shot 2021-10-06 at 13.53.43.png](Shape%20Up%20f2beaa838fa14609b85821b8464f381f/Screen_Shot_2021-10-06_at_13.53.43.png)
 
-Pitch: doesn't really go into a lot of details. It describes how it works, how to address the rabbit holes, etc..
+  ![Screen_Shot_2021-10-06_at_13 52 25](https://user-images.githubusercontent.com/82840886/136266867-e67179f3-5eab-4238-9675-fbe2dfe04c89.png)
+  ![Screen_Shot_2021-10-06_at_13 53 43](https://user-images.githubusercontent.com/82840886/136266888-160b9452-2a6b-4ac8-b408-a593d1863d6b.png)
