@@ -8,8 +8,6 @@ import MovieCard from "./MovieCard";
 const Movies: FC = () => {
   const [moviesList, setMoviesList] = useState<Movie[] | undefined>(undefined);
 
-  console.log(moviesList);
-
   useEffect(() => {
     const getMovies = async () => {
       const { items } = await deliveryClient
