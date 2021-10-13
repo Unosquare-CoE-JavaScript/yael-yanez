@@ -1,4 +1,4 @@
-Javascript CoE
+<h1 align="center">Golang</h1>
 
 On this course I learnt the GoLang's funadamentals by making a simple bills application, where you can create a bill, add items to it, add a tip and to save the bill into a file.
 
