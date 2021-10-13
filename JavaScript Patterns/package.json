@@ -1,0 +1,23 @@
+{
+  "name": "yael-yanez",
+  "version": "1.0.0",
+  "description": "Javascript Patterns | Javascript CoE",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "^3.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+     "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unosquare-CoE-JavaScript/yael-yanez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unosquare-CoE-JavaScript/yael-yanez/issues"
+  },
+  "homepage": "https://github.com/Unosquare-CoE-JavaScript/yael-yanez#readme"
+}
