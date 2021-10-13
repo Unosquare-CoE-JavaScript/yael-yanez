@@ -18,12 +18,13 @@
   I've developed a number of applications where I've implemented a number of different technologies with the purpose of learning and enforcing my current knowledge. 
 </p>
 
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/Functional%20Programming"></a>Functional Programming
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/JavaScript%20Patterns"></a>JavaScript Patterns
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/TypeScript%20Fundamentals"></a>TypeScript Fundamentals
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/YouDontKnowJSYet_GetStarted"></a> You don't know JS Yet: Get Started
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/gatsby-portfolio"></a>Gasty & Kentico Kontent
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/go"></a> Golang
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/react-kontent"></a>React Kontent
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/react-typescript"></a> React TypeScript
-## <a href="https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/shapeup"></a>📕 ShapeUp
+## Projects
+#### 1. [JavaScript Patterns](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/JavaScript%20Patterns)
+#### 2. [Functional Programming](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/Functional%20Programming)
+#### 3. [TypeScript Fundamentals](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/TypeScript%20Fundamentals)
+#### 4. [React TypeScript](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/react-typescript)
+#### 5. [React Kontent](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/react-kontent)
+#### 6. [Gasty & Kentico Kontent](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/gatsby-portfolio)
+#### 7. [Golang](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/go) 
+#### 8. [You don't know JS Yet: Get Started](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/YouDontKnowJSYet_GetStarted)
+#### 9. [Shape Up: Agile Methology](https://github.com/Unosquare-CoE-JavaScript/yael-yanez/tree/master/shapeup)
