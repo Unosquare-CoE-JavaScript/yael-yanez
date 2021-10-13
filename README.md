@@ -1,1 +1,0 @@
-Javascript Patterns | Javascript CoE
