@@ -12,17 +12,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     "gatsby-transformer-remark",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `@kentico/gatsby-source-kontent`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `projects`,
-        path: `${__dirname}/src/projects/`,
+        projectId: `faaa98ea-8982-00a3-8612-060dfbd0611f`,
+        languageCodenames: [`default`],
       },
     },
   ],

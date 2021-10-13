@@ -1,8 +1,21 @@
 import React from "react"
 import Navbar from "./Navbar"
+import { useStaticQuery, graphql } from "gatsby"
 import "../styles/global.css"
 
 const Layout = ({ children }) => {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(graphql`
+    query SiteCopyrightData {
+      site {
+        siteMetadata {
+          copyright
+        }
+      }
+    }
+  `)
+
   return (
     <div className="layout">
       <Navbar />
@@ -10,7 +23,7 @@ const Layout = ({ children }) => {
       <div className="content">{children}</div>
 
       <footer>
-        <p>Copyright 2021 Yael Yañez</p>
+        <p>{siteMetadata.copyright}</p>
       </footer>
     </div>
   )

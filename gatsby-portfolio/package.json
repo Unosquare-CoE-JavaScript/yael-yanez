@@ -14,6 +14,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@kentico/gatsby-kontent-components": "^7.2.0",
+    "@kentico/gatsby-source-kontent": "^7.2.0",
     "gatsby": "^3.13.1",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-sharp": "^3.14.1",

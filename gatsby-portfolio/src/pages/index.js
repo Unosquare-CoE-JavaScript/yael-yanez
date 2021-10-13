@@ -1,34 +1,62 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { ImageElement } from "@kentico/gatsby-kontent-components"
+
 import * as styles from "../styles/home.module.css"
 
 const Home = ({ data }) => {
-  const image = getImage(data.file)
+  const { elements } = data.pageContent
+  const { title, subtitle, slogan, cta, mainbanner } = elements
 
   return (
     <Layout>
       <section className={styles.header}>
         <div>
-          <h2>Design</h2>
-          <h3>Develop & Deploy</h3>
-          <p>UX designer & web developer based in Manchester.</p>
+          <h2>{title.value}</h2>
+          <h3>{subtitle.value}</h3>
+          <p>{slogan.value}</p>
           <Link className={styles.btn} to="/projects">
-            My Portfolio Projects
+            {cta.value}
           </Link>
         </div>
-        <GatsbyImage image={image} />
+        <ImageElement
+          image={mainbanner.value[0]}
+          aspectRatio={4 / 3}
+          alt={title.value}
+          backgroundColor="transparent"
+        />
       </section>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query Banner {
-    file(relativePath: { eq: "banner.png" }) {
-      childImageSharp {
-        gatsbyImageData(placeholder: DOMINANT_COLOR)
+  query GetHomePageContent {
+    pageContent: kontentItemPage(
+      elements: { id: { value: { eq: "home-page" } } }
+    ) {
+      elements {
+        cta {
+          value
+        }
+        id {
+          value
+        }
+        mainbanner {
+          value {
+            url
+          }
+        }
+        slogan {
+          value
+        }
+        subtitle {
+          value
+        }
+        title {
+          value
+        }
       }
     }
   }

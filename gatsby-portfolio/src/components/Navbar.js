@@ -1,5 +1,6 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import NAVIGATION_STRINGS from "../constants/navigation"
 
 const Navbar = () => {
   const {
@@ -18,9 +19,11 @@ const Navbar = () => {
     <nav>
       <h1>{siteMetadata.title}</h1>
       <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Portfolio Projects</Link>
+        {NAVIGATION_STRINGS.map(({ title, path }) => (
+          <Link to={path} key={title}>
+            {title}
+          </Link>
+        ))}
       </div>
     </nav>
   )

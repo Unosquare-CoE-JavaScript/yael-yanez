@@ -1,27 +1,31 @@
 import React from "react"
-import Layout from "../components/Layout"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as styles from "../styles/project-details.module.css"
 import { graphql } from "gatsby"
+import {
+  ImageElement,
+  RichTextElement,
+} from "@kentico/gatsby-kontent-components"
+import Layout from "../components/Layout"
+import * as styles from "../styles/project-details.module.css"
 
 const ProjectDetails = ({ data }) => {
-  const { markdownRemark } = data
-  const { html } = markdownRemark
-  const { title, stack, featuredImg } = markdownRemark.frontmatter
-  const image = getImage(featuredImg.childrenImageSharp[0])
+  const { elements } = data.projectDetails
+  const { content, featuredimg, stack, title } = elements
 
   return (
     <Layout>
       <div className={styles.details}>
-        <h2>{title}</h2>
-        <h3>{stack}</h3>
+        <h2>{title.value}</h2>
+        <h3>{stack.value}</h3>
         <div className={styles.featured}>
-          <GatsbyImage image={image} />
+          <ImageElement
+            image={featuredimg.value[0]}
+            alt={title.value}
+            layout="fullWidth"
+            height={1000}
+            backgroundColor="transparent"
+          />
         </div>
-        <div
-          className={styles.html}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <RichTextElement className={styles.html} value={content.value} />
       </div>
     </Layout>
   )
@@ -29,16 +33,23 @@ const ProjectDetails = ({ data }) => {
 
 export const query = graphql`
   query ProjectDetails($slug: String) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      id
-      html
-      frontmatter {
-        stack
-        title
-        featuredImg {
-          childrenImageSharp {
-            gatsbyImageData
+    projectDetails: kontentItemProject(
+      elements: { slug: { value: { eq: $slug } } }
+    ) {
+      elements {
+        content {
+          value
+        }
+        featuredimg {
+          value {
+            url
           }
+        }
+        stack {
+          value
+        }
+        title {
+          value
         }
       }
     }

@@ -1,27 +1,27 @@
 const path = require("path")
 
 exports.createPages = async ({ graphql, actions }) => {
-  const {
-    data: {
-      allMarkdownRemark: { nodes },
-    },
-  } = await graphql(`
+  const { data } = await graphql(`
     query Projects {
-      allMarkdownRemark {
+      projects: allKontentItemProject {
         nodes {
-          frontmatter {
-            slug
+          elements {
+            slug {
+              value
+            }
           }
         }
       }
     }
   `)
 
-  nodes.forEach(node => {
+  const { nodes } = data.projects
+
+  nodes.forEach(({ elements }) => {
     actions.createPage({
-      path: "/projects/" + node.frontmatter.slug,
+      path: "/projects/" + elements.slug.value,
       component: path.resolve("./src/templates/project-details.js"),
-      context: { slug: node.frontmatter.slug },
+      context: { slug: elements.slug.value },
     })
   })
 }

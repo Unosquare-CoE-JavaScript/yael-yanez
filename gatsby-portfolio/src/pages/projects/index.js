@@ -1,39 +1,44 @@
-import { graphql, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
+import { graphql, Link } from "gatsby"
+import { ImageElement } from "@kentico/gatsby-kontent-components"
 import Layout from "../../components/Layout"
 import * as styles from "../../styles/projects.module.css"
 
 const Projects = ({ data }) => {
   const {
-    contact: { siteMetadata },
     projects: { nodes: projects },
+    pageContent: { elements: pageContent },
   } = data
+
+  const { title, subtitle, cta } = pageContent
 
   return (
     <Layout>
       <div className={styles.portfolio}>
-        <h2>Portfolio</h2>
-        <h3>Projects & Websites I've Created</h3>
+        <h2>{title.value}</h2>
+        <h3>{subtitle.value}</h3>
         <div className={styles.projects}>
           {projects.map(project => {
-            const { frontmatter, id } = project
-            const { slug, thumb, title, stack } = frontmatter
+            const { elements: projectElements, id } = project
+            const { slug, thumb, title, stack } = projectElements
 
             return (
-              <Link to={"/projects/" + slug} key={id}>
+              <Link to={"/projects/" + slug.value} key={id}>
                 <div>
-                  <GatsbyImage image={getImage(thumb)} />
-                  <h3>{title}</h3>
-                  <p>{stack}</p>
+                  <ImageElement
+                    image={thumb.value[0]}
+                    aspectRatio={4 / 3}
+                    alt={slug.value}
+                    backgroundColor="transparent"
+                  />
+                  <h3>{title.value}</h3>
+                  <p>{stack.value}</p>
                 </div>
               </Link>
             )
           })}
         </div>
-        <p>
-          Like what you see? Email me at {siteMetadata.contact} for a quote!
-        </p>
+        <p>{cta.value}</p>
       </div>
     </Layout>
   )
@@ -42,26 +47,45 @@ const Projects = ({ data }) => {
 // export page query
 export const query = graphql`
   query ProjectsQuery {
-    projects: allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
+    pageContent: kontentItemPage(
+      elements: { id: { value: { eq: "portfolio-page" } } }
     ) {
-      nodes {
-        frontmatter {
-          title
-          stack
-          slug
-          thumb {
-            childImageSharp {
-              gatsbyImageData(placeholder: DOMINANT_COLOR)
-            }
-          }
+      elements {
+        title {
+          value
         }
-        id
+        subtitle {
+          value
+        }
+        cta {
+          value
+        }
       }
     }
     contact: site {
       siteMetadata {
         contact
+      }
+    }
+    projects: allKontentItemProject(sort: { fields: elements___date___value }) {
+      nodes {
+        elements {
+          title {
+            value
+          }
+          stack {
+            value
+          }
+          thumb {
+            value {
+              url
+            }
+          }
+          slug {
+            value
+          }
+        }
+        id
       }
     }
   }
