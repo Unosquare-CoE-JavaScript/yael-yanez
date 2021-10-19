@@ -19,10 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1/product", require("./routes/productRoutes"));
-
-app.get("/", (req, res, next) => {
-  res.send("Hello from Node API server");
-});
+app.use("/api/v1/user", require("./routes/userRouters"));
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
