@@ -72,6 +72,6 @@ Ok, we got 6 weeks to build the solutions described in this pitch. Let's do this
 
 
 ### _Good refences_
-[Primeros pasos con Shape Up](https://www.youtube.com/watch?v=ns_i03epYD8https://www.youtube.com/watch?v=GdncRC1HkK0)
+[Primeros pasos con Shape Up](https://www.youtube.com/watch?v=GdncRC1HkK0)
 
 [Kiley Dorton: Ditch the Backlog – Stop Sprinting and Start Shaping (⚡️) / React Boston 2019](https://www.youtube.com/watch?v=ns_i03epYD8)
