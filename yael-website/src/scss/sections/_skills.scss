@@ -1,0 +1,37 @@
+.skills {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    .skill {
+      transition: 0.3s background-color ease-in, 0.3s font-size ease-in;
+      display: grid;
+      place-items: center;
+
+      &:hover {
+        font-size: $font-size-lg * 1.1;
+      }
+    }
+  }
+
+  h2 {
+    padding: 20px 40px;
+    background-color: $black;
+    border: 2px solid transparent;
+    box-shadow: 0px 0px 15px 5px transparent;
+  }
+
+  @include sm {
+    .grid {
+      .skill {
+        &:hover {
+          font-size: $font-size-md * 1.1;
+        }
+      }
+    }
+
+    h2 {
+      width: 85%;
+    }
+  }
+}

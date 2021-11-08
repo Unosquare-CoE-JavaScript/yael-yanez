@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+@include sm {
+  .font-sm {
+    font-size: math.div($font-size-sm, 1.3);
+  }
+
+  .font-md {
+    font-size: math.div($font-size-md, 1.3);
+  }
+
+  .font-lg {
+    font-size: math.div($font-size-lg, 1.3);
+  }
+
+  .font-xl {
+    font-size: math.div($font-size-xl, 1.3);
+  }
+
+  .font-xxl {
+    font-size: math.div($font-size-xxl, 1.3);
+  }
+
+  .font-xxxl {
+    font-size: math.div($font-size-xxxl, 1.3);
+  }
+
+  .font-xxxl {
+    font-size: math.div($font-size-xxxl, 1.3);
+  }
+}

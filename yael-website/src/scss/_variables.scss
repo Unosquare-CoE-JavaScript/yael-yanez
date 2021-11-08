@@ -1,0 +1,61 @@
+// theme colors
+$primary: #304ff3;
+$white: white;
+$black: black;
+$green-1: #87c248;
+$green-2: #06ac4e;
+$yellow-1: #f7e018;
+$red-1: #e84f32;
+$red-2: #c53d14;
+$red-3: #ec4f18;
+$blue-1: #5fd3f3;
+$blue-2: #2584ff;
+$blue-3: #274de4;
+$purple-1: #623294;
+$pink-1: #d56fa3;
+
+// color palette
+$colors: (
+  'primary': $primary,
+  'white': $white,
+  'black': $black,
+  'green-1': $green-1,
+  'green-2': $green-2,
+  'yellow-1': $yellow-1,
+  'red-1': $red-1,
+  'red-2': $red-2,
+  'red-3': $red-3,
+  'blue-1': $blue-1,
+  'blue-2': $blue-2,
+  'blue-3': $blue-3,
+  'purple-1': $purple-1,
+  'pink-1': $pink-1,
+);
+
+// spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+// borders
+$base-border-thickness: 1px;
+$base-border-radius: 20px;
+
+// font families
+$base-font-family: 'Urbanist', sans-serif;
+$font-rubik: 'Rubik', sans-serif;
+
+// font weights
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 600;
+$font-extra-bold: 700;
+
+// font sizes
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-md: $base-font-size * 1.2;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+$font-size-xxxl: $base-font-size * 4;

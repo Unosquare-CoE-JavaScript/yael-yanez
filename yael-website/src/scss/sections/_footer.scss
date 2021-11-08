@@ -1,0 +1,12 @@
+footer {
+  img {
+    width: 10%;
+    height: auto;
+  }
+
+  @include sm {
+    img {
+      width: 35%;
+    }
+  }
+}

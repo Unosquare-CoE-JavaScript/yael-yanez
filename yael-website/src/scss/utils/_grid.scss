@@ -1,0 +1,70 @@
+@use 'sass:math';
+
+$grid-columns: 12;
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+$grid-gaps: (
+  '0': 0,
+  '1': 10px,
+  '2': 20px,
+  '3': 30px,
+);
+
+.full-screen-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  @extend .grid;
+  place-items: center;
+}
+
+.full-screen-container {
+  @extend .full-screen-container;
+}
+
+.centered-full-screen-container {
+  @extend .full-screen-container;
+  @extend .grid;
+  place-items: center;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    grid-template-columns: repeat($i, 1fr);
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .row-#{$i} {
+    grid-template-rows: repeat($i, 1fr);
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+// grid gaps
+@each $key, $val in $grid-gaps {
+  .gap-#{$key} > * {
+    padding: $val;
+  }
+
+  .gap-#{$key} {
+    margin-left: -$val;
+    margin-right: -$val;
+  }
+}
+
+// justify content classes
+@each $val in $layout-values {
+  .justify-#{$val} {
+    justify-content: $val;
+  }
+}
