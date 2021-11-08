@@ -18,21 +18,25 @@ const enableScrolling = () => {
 };
 
 const animateHome = () => {
-  const jumboTitle = document.querySelector('#jumbo-title');
-  const jumboSubtitle = document.querySelector('#jumbo-subtitle');
-  const jumboBounce = document.querySelector('#jumbo-bounce');
-  const jumboScroll = document.querySelector('#jumbo-scroll');
+  const homeTitle = document.querySelector('#home-title');
+  const homeSubtitle = document.querySelector('#home-subtitle');
+  const homeBounce = document.querySelector('#home-bounce');
+  const homeScroll = document.querySelector('#home-scroll');
   const mainLogo = document.querySelector('#main-logo');
 
   anime
     .timeline({ easing: 'easeOutQuart', duration: 3000 })
-    .add({ targets: jumboTitle, opacity: 1, translateY: [100, 0] })
-    .add({ targets: jumboSubtitle, opacity: 1 }, '-=1500')
-    .add({ targets: jumboScroll, opacity: 1 }, '-=2500')
+    .add({
+      targets: homeTitle,
+      opacity: 1,
+      translateY: isFistRender ? [100, 0] : 0,
+    })
+    .add({ targets: homeSubtitle, opacity: 1 }, '-=1500')
+    .add({ targets: homeScroll, opacity: 1 }, '-=2500')
     .add({ targets: mainLogo, opacity: 1 }, '-=3000');
 
   anime({
-    targets: jumboBounce,
+    targets: homeBounce,
     translateY: [-10, 0],
     easing: 'easeInQuad',
     duration: 800,
@@ -56,12 +60,12 @@ const animateAbout = () => {
     .add({ targets: aboutMeInfo, opacity: 1 }, '-=1000');
 
   _.shuffle(attributes).forEach((attribute) =>
-    aboutTl.add({ targets: attribute, opacity: 1, duration: 2300 }, '-=1500')
+    aboutTl.add({ targets: attribute, opacity: 1, duration: 2300 }, '-=1000')
   );
 
   aboutTl
     .add({ targets: attributesContainer, backgroundColor: '#fff' }, '-=2000')
-    .add({ targets: attributes, color: '#000' }, '-=1500');
+    .add({ targets: attributes, color: '#000' }, '-=2000');
 };
 
 const animateSkills = () => {
@@ -135,11 +139,33 @@ const animateSkills = () => {
   }
 };
 
+const animateUsedTechs = () => {
+  const usedTechsTitle = document.querySelector('#used-technologies-title');
+  const usedTechs = document.querySelectorAll('.used-tech');
+  const { opacity: currentTitleOpacity } = usedTechsTitle.style;
+
+  anime
+    .timeline({ easing: 'easeOutQuad', duration: 2500 })
+    .add({
+      targets: usedTechsTitle,
+      opacity: currentTitleOpacity ? currentTitleOpacity : [0, 1, 0.2],
+    })
+    .add({ targets: usedTechs, opacity: 1 });
+};
+
+const animateFooter = () => {
+  const footerLogo = document.querySelector('#footer-logo');
+
+  anime({ targets: footerLogo, duration: 3000, opacity: 1 });
+};
+
 const handleAfterLoad = (origin, { index }) => {
   const actionMap = {
     0: animateHome,
     1: animateAbout,
     2: animateSkills,
+    3: animateUsedTechs,
+    4: animateFooter,
     default: () => {},
   };
 
@@ -157,12 +183,7 @@ const handleAfterLoad = (origin, { index }) => {
     }
   }
 
-  if (isFistRender) {
-    if (index === 0) actionMap[index]();
-  } else {
-    if (index !== 0)
-      actionMap[index] ? actionMap[index]() : actionMap.default();
-  }
+  actionMap[index] ? actionMap[index]() : actionMap.default();
 };
 
 const hanldeAfterRender = () => {
@@ -173,18 +194,18 @@ document.body.onload = () => {
   backToTopBtn = document.querySelector('#back-to-top');
 
   fullPage = new fullpage('#fullpage', {
-    licenseKey: FULL_SCREEN_LICENSE,
+    licenseKey: FULL_PAGE_LICENSE,
     navigation: true,
     scrollingSpeed: 700,
     fixedElements: ['#back-to-top'],
     controlArrows: true,
-    anchors: ['jumbo', 'about-me', 'skills', 'footer'],
+    anchors: ['home', 'about-me', 'skills', 'used-technologies', 'footer'],
     afterLoad: handleAfterLoad,
     afterRender: hanldeAfterRender,
   });
 
   if (backToTopBtn && fullPage)
     backToTopBtn.onclick = () => {
-      fullPage.moveTo('jumbo');
+      fullPage.moveTo('home');
     };
 };

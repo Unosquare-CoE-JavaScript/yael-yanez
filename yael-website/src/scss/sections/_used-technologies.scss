@@ -1,0 +1,37 @@
+.used-technologies {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+
+    h2 {
+      z-index: -99;
+      font-size: 60px;
+    }
+
+    .used-tech {
+      p {
+        transition: 0.25s color ease-in;
+      }
+
+      span {
+        transition: 0.25s opacity ease-in;
+      }
+    }
+
+    .used-tech {
+      &:hover {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+
+      h2 {
+        font-size: 30px;
+      }
+    }
+  }
+}

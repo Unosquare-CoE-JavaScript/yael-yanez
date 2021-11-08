@@ -151,17 +151,6 @@ $utilities: (
       '10': 1,
     ),
   ),
-  'border-radius': (
-    'prefix': 'br',
-    'values': (
-      'default': $base-border-radius,
-      'none': 0,
-      'xs': math.div($base-border-radius, 4),
-      'sm': math.div($base-border-radius, 2),
-      'lg': $base-border-radius * 2,
-      'full': 50%,
-    ),
-  ),
   'display': (
     'prefix': 'display',
     'values': (
@@ -211,12 +200,6 @@ $utilities: (
       'center': center,
     ),
   ),
-  'object-fit': (
-    'prefix': 'fit',
-    'values': (
-      'cover': cover,
-    ),
-  ),
   'position': (
     'prefix': 'pos',
     'values': (
@@ -257,7 +240,6 @@ $utilities: (
         #{$property}: $v;
       }
     } @else {
-      @debug #{$prefix}-#{$k};
       .#{$prefix}-#{$k} {
         #{$property}: $v;
       }
