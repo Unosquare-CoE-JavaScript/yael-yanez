@@ -135,7 +135,19 @@ const useClapState = (initialState = INITIAL_STATE) => {
     }));
   }, [count, countTotal]);
 
-  return [clapState, updateClapState];
+  const togglerProps = {
+    onClick: updateClapState,
+    'aria-pressed': clapState.isClicked,
+  };
+
+  const counterProps = {
+    count,
+    'aria-valuemax': MAXIMUM_USER_CLAP,
+    'aria-valuemin': 0,
+    'aria-valuenow': count,
+  };
+
+  return { clapState, updateClapState, togglerProps, counterProps };
 };
 
 // useEffectAfterMount Hook
@@ -225,7 +237,9 @@ const CountTotal = ({ countTotal, setRef, ...restProps }) => {
 };
 
 const Usage = () => {
-  const [{ count, countTotal, isClicked }, updateClapState] = useClapState();
+  const { clapState, updateClapState, togglerProps, counterProps } =
+    useClapState();
+  const { count, countTotal, isClicked } = clapState;
   const [{ clapRef, clapCountRef, clapTotalRef }, setRef] = useDOMRef();
 
   const animationTL = useClapAnimation({
