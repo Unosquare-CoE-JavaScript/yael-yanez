@@ -1,8 +1,8 @@
-const fib = (n) => (n < 2 ? n : fib(n - 1) + fib(n - 2));
+const fibWorker = (n) => (n < 2 ? n : fibWorker(n - 1) + fibWorker(n - 2));
 
 self.onmessage = (evt) => {
   const { index } = evt.data;
-  const number = fib(index);
+  const number = fibWorker(index);
 
   self.postMessage({ index, number });
 };

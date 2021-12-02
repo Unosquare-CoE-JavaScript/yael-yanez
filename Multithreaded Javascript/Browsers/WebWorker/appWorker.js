@@ -1,22 +1,20 @@
-const fib = (n) => (n < 2 ? n : fib(n - 1) + fib(n - 2));
-
-const rangeSlider = document.getElementById('range');
-const generateFibBtn = document.getElementById('generateFibBtn');
-const fibInput = document.getElementById('fibonacci');
-const rangeValue = document.getElementById('rangeValue');
-const fibResult = document.getElementById('fib-result');
+const rangeSliderWorker = document.getElementById('rangeWorker');
+const generateFibBtnWorker = document.getElementById('generateFibBtnWorker');
+const fibInputWorker = document.getElementById('fibonacciWorker');
+const rangeValueWorker = document.getElementById('rangeValueWorker');
+const fibResultWorker = document.getElementById('fib-resultWorker');
 
 const worker = new window.Worker('worker.js');
 
 worker.onmessage = (evt) => {
   const { index, number } = evt.data;
-  fibResult.innerText = `${index}  => ${number}`;
+  fibResultWorker.innerText = `${index}  => ${number}`;
 };
 
-rangeSlider.oninput = ({ target }) => {
-  rangeValue.innerText = target.value;
+rangeSliderWorker.oninput = ({ target }) => {
+  rangeValueWorker.innerText = target.value;
 };
 
-generateFibBtn.onclick = () => {
-  worker.postMessage({ index: fibInput.value });
+generateFibBtnWorker.onclick = () => {
+  worker.postMessage({ index: fibInputWorker.value });
 };
