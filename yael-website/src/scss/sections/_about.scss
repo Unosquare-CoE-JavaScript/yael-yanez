@@ -1,0 +1,52 @@
+.about-me {
+  &-data {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+
+    p {
+      line-height: 1.8rem;
+      letter-spacing: 2.5px;
+    }
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    .attributes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .attribute {
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+
+  @include sm {
+    &-data {
+      padding: 1.5rem 1rem 0.5rem 1rem;
+
+      p {
+        line-height: 1.2rem;
+        letter-spacing: 2px;
+      }
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      .attributes {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+
+        .attribute {
+          display: grid;
+          place-items: center;
+        }
+      }
+    }
+  }
+}

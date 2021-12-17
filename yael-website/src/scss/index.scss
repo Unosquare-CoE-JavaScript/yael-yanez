@@ -1,0 +1,20 @@
+@import './base';
+@import './variables';
+
+// Utils
+@import './utils/colors';
+@import './utils/utilities';
+@import './utils/breakpoints';
+@import './utils/grid';
+@import './utils/font-sizes';
+
+// Components
+@import './components/navbar';
+@import './components/buttons';
+
+// Sections
+@import './sections/home';
+@import './sections/about';
+@import './sections/skills';
+@import './sections/used-technologies';
+@import './sections/footer';

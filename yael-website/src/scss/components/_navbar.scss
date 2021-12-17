@@ -1,0 +1,18 @@
+.navbar {
+  height: 80px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 10%;
+  }
+
+  @include sm {
+    justify-content: center;
+
+    img {
+      width: 35%;
+    }
+  }
+}

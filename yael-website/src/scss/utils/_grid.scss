@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  @extend .grid;
+  place-items: center;
+}
+
+.centered-full-screen-container {
+  @extend .grid;
+  height: 100vh;
+  width: 100%;
+  place-items: center;
+}
